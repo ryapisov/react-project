@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Routes from 'routes'
 import {BrowserRouter as Router} from 'react-router-dom'
+import NavBar from 'components/NavBar'
 
 const App = () =>{
   return (
     <div>
-      <h3>Hooks</h3>
       <Router>
+        <NavBar />
         <Routes />
       </Router>
     </div>
