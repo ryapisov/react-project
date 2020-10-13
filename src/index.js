@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Routes from 'routes'
 import {BrowserRouter as Router} from 'react-router-dom'
-import NavBar from 'components/NavBar'
-import { CurrentUserProvider } from 'contexts/currentUser'
+
+import Routes from 'routes'
+import Topbar from 'components/topbar'
+import {CurrentUserProvider} from 'contexts/currentUser'
 import CurrentUserChecker from 'components/currentUserChecker'
 
-const App = () =>{
+const App = () => {
   return (
     <CurrentUserProvider>
       <CurrentUserChecker>
         <Router>
-          <NavBar />
+          <Topbar />
           <Routes />
         </Router>
       </CurrentUserChecker>
@@ -19,9 +20,4 @@ const App = () =>{
   )
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))
